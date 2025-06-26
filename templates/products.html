@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .product {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            background-color: white;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            margin: 20px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    
+    {% for product in products %}
+    <div class="product">
+        <h2>{{ product.name }}</h2>
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+        <p>Price: ₹{{ product.price }}</p>
+        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    {% endfor %}
+
+    <a href="{{ url_for('view_cart') }}">View Cart</a>
+    <a href="{{ url_for('home') }}">Home</a>
+</body>
+</html>

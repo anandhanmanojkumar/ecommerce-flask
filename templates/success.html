@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Success</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+        a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment Successful!</h1>
+    <p>Thank you for your purchase!</p>
+    <a href="{{ url_for('home') }}">Go to Home</a>
+</body>
+</html>
