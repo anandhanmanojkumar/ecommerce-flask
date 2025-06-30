@@ -1,33 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Welcome - E-commerce</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Mano E-commerce Store</title>
     <style>
         body {
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .navbar .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(to right, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #4facfe, 0 0 20px #00f2fe;
+            }
+
+            to {
+                text-shadow: 0 0 20px #4facfe, 0 0 30px #00f2fe;
+            }
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffff00;
+        }
+
+        .container {
             text-align: center;
-            padding: 50px;
-            color: white;
+            padding: 60px 20px;
         }
-        input, button {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            border: none;
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px #000000;
         }
+
+        p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        input,
         button {
-            background-color: #4CAF50;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        input {
+            background-color: #ffffff;
+            color: #333333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background: linear-gradient(to right, #00f2fe, #4facfe);
             color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+            color: #f1f1f1;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1>Welcome to Mano E-Commerce Store</h1>
-    <form method="POST">
-        <input type="text" placeholder="Username" required><br>
-        <input type="password" placeholder="Password" required><br>
-        <button type="submit">Login</button>
-    </form>
+
+    <div class="navbar">
+        <div class="logo">Mano Store</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Mano E-Commerce Store</h1>
+        <p>Your one-stop shop for the best products</p>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter your Username" required><br>
+            <input type="password" name="password" placeholder="Enter your Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2025 Mano E-Commerce Store. All rights reserved.
+    </footer>
+
 </body>
+
 </html>
