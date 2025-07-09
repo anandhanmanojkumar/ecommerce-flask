@@ -46,5 +46,10 @@ def payment_success():
     cart.clear()
     return render_template('payment_success.html')
 
+@app.route('/')
+def health():
+    return "Health Check OK", 200
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

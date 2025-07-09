@@ -1,17 +1,17 @@
 # Use Python 3.9 slim image
 FROM python:3.9-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy all files from the current directory to the container's working directory
+# Copy contents
 COPY . .
 
-# Install the required Python packages
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 80 to make the app accessible
+# Expose correct port (5001 matches your app)
 EXPOSE 5001
 
-# Command to run the Flask app
+# Start the Flask app
 CMD ["python", "app1.py"]
